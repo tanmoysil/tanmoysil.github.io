@@ -128,12 +128,29 @@ function App() {
         </section>
 
         <section id="about" className="panel reveal">
-          <h2>About</h2>
+          <h2>About Me</h2>
           <p>
-            I am an Electrical Engineer focused on Computational Neuroscience. I
-            work on mathematically grounded models, neural data analysis, and
-            interpretable computational pipelines for research and applied
-            systems.
+            I am an Electrical Engineer and Computational Neuroscientist focused
+            on clinically relevant algorithm development for neurological
+            disorders. My work combines signal processing, machine learning, and
+            neurophysiology to build practical tools for diagnosis and
+            treatment.
+          </p>
+          <p>
+            I am currently a PhD candidate in Computational Neuroscience at the
+            University of Wurzburg, where I study neural biomarkers in
+            Parkinson&apos;s disease using LFP, EEG, EMG, and accelerometer data.
+            My research includes wavelet-based beta-burst detection, latent
+            representation learning with VAEs, and translation from animal
+            models to human Deep Brain Stimulation studies.
+          </p>
+          <p>
+            My background includes an MS in Biomedical Engineering from the
+            University of Southern California and a BTech in Electronics and
+            Instrumentation Engineering from West Bengal University of
+            Technology. I have published across neuroscience and control
+            engineering, taught graduate-level data science courses, and was
+            awarded a DAAD PhD fellowship.
           </p>
           <p>
             Email:{" "}
