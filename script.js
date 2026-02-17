@@ -21,6 +21,21 @@ const projects = [
 
 function App() {
   const year = new Date().getFullYear();
+  const [theme, setTheme] = React.useState("light");
+
+  const applyTheme = React.useCallback((nextTheme) => {
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    document.documentElement.style.colorScheme =
+      nextTheme === "dark" ? "dark" : "light";
+  }, []);
+
+  React.useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+    setTheme(initialTheme);
+    applyTheme(initialTheme);
+  }, [applyTheme]);
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,20 +54,41 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    applyTheme(nextTheme);
+  };
+
   return (
     <>
+      <a className="skip-link" href="#home">
+        Skip to content
+      </a>
       <div className="noise"></div>
       <header className="topbar">
         <a className="brand" href="#home">
           tanmoysil
         </a>
-        <nav>
+        <nav aria-label="Main navigation">
           <a href="#about">About</a>
+          <a href="#now">Now</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
           <a href="/resume.pdf" target="_blank" rel="noreferrer">
             Resume
           </a>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={
+              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            }
+          >
+            {theme === "dark" ? "Light" : "Dark"}
+          </button>
         </nav>
       </header>
 
@@ -100,6 +136,18 @@ function App() {
           </p>
         </section>
 
+        <section id="now" className="panel reveal">
+          <h2>Now</h2>
+          <p>
+            I&apos;m currently improving this portfolio with better accessibility,
+            cleaner performance, and stronger project storytelling.
+          </p>
+          <p>
+            I&apos;m also learning more about frontend architecture and analytics
+            patterns for static sites.
+          </p>
+        </section>
+
         <section id="projects" className="panel reveal">
           <h2>Projects</h2>
           <div className="grid">
@@ -120,6 +168,7 @@ function App() {
             className="contact-form"
             action="https://formsubmit.co/tanmoy_sil@hotmail.com"
             method="POST"
+            aria-label="Contact form"
           >
             <input type="hidden" name="_subject" value="New message from portfolio" />
             <input type="hidden" name="_captcha" value="false" />
@@ -129,10 +178,22 @@ function App() {
               value="https://tanmoysil.github.io/#contact"
             />
             <label htmlFor="name">Name</label>
-            <input id="name" name="name" type="text" required />
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autoComplete="name"
+              required
+            />
 
             <label htmlFor="email">Email</label>
-            <input id="email" name="email" type="email" required />
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              required
+            />
 
             <label htmlFor="message">Message</label>
             <textarea id="message" name="message" rows="5" required></textarea>
