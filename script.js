@@ -1,21 +1,24 @@
 const projects = [
   {
-    title: "Project One",
-    description: "Short description of your project and the outcome it created.",
+    title: "Neural Dynamics Modeling",
+    description:
+      "Biophysical and reduced-order models for oscillatory behavior across neural populations.",
     link: "#",
-    label: "Live Demo",
+    label: "Details",
   },
   {
-    title: "Project Two",
-    description: "Short description of your project and the stack you used.",
+    title: "Signal Processing Pipeline",
+    description:
+      "Spike/LFP preprocessing, feature extraction, and reproducible analysis workflows.",
     link: "#",
-    label: "GitHub",
+    label: "Repository",
   },
   {
-    title: "Project Three",
-    description: "Short description of your project and why it matters.",
+    title: "Brain-Inspired Control",
+    description:
+      "Control frameworks informed by neural computation for adaptive, robust systems.",
     link: "#",
-    label: "Case Study",
+    label: "Overview",
   },
 ];
 
@@ -73,8 +76,9 @@ function App() {
         </a>
         <nav aria-label="Main navigation">
           <a href="#about">About</a>
+          <a href="#research">Research</a>
           <a href="#now">Now</a>
-          <a href="#projects">Projects</a>
+          <a href="#publications">Publications</a>
           <a href="#contact">Contact</a>
           <a href="/resume.pdf" target="_blank" rel="noreferrer">
             Resume
@@ -94,14 +98,20 @@ function App() {
 
       <main id="home">
         <section className="hero reveal">
-          <p className="eyebrow">Developer • Designer • Builder</p>
-          <h1>Hi, I&apos;m Tanmoy. I build clean digital experiences.</h1>
+          <p className="eyebrow">
+            Electrical Engineering • Computational Neuroscience
+          </p>
+          <h1>
+            I study and build computational models of neural systems and their
+            engineering applications.
+          </h1>
           <p className="subtitle">
-            This React portfolio is ready for GitHub Pages upload.
+            Bridging signal processing, dynamical systems, and machine learning
+            to understand brain computation.
           </p>
           <div className="cta-row">
-            <a className="btn primary" href="#projects">
-              View Projects
+            <a className="btn primary" href="#research">
+              View Research
             </a>
             <a className="btn ghost" href="#contact">
               Contact Me
@@ -120,9 +130,10 @@ function App() {
         <section id="about" className="panel reveal">
           <h2>About</h2>
           <p>
-            I enjoy solving practical problems with thoughtful design and
-            maintainable code. I focus on shipping quickly without compromising
-            quality.
+            I am an Electrical Engineer focused on Computational Neuroscience. I
+            work on mathematically grounded models, neural data analysis, and
+            interpretable computational pipelines for research and applied
+            systems.
           </p>
           <p>
             Email:{" "}
@@ -138,18 +149,21 @@ function App() {
 
         <section id="now" className="panel reveal">
           <h2>Now</h2>
-          <p>
-            I&apos;m currently improving this portfolio with better accessibility,
-            cleaner performance, and stronger project storytelling.
-          </p>
-          <p>
-            I&apos;m also learning more about frontend architecture and analytics
-            patterns for static sites.
-          </p>
+          <ul className="now-list">
+            <li>
+              Building simulation and inference workflows for neural dynamics.
+            </li>
+            <li>
+              Studying biologically plausible learning and control strategies.
+            </li>
+            <li>
+              Writing clear technical notes on neuroscience methods and results.
+            </li>
+          </ul>
         </section>
 
-        <section id="projects" className="panel reveal">
-          <h2>Projects</h2>
+        <section id="research" className="panel reveal">
+          <h2>Research &amp; Projects</h2>
           <div className="grid">
             {projects.map((project) => (
               <article className="card" key={project.title}>
@@ -159,6 +173,14 @@ function App() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section id="publications" className="panel reveal">
+          <h2>Publications</h2>
+          <p>
+            Add your papers, preprints, and conference posters here. Example:
+            Author(s), title, venue/year, and a DOI or arXiv link.
+          </p>
         </section>
 
         <section id="contact" className="panel reveal">
