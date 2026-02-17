@@ -50,6 +50,9 @@ function App() {
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
+          <a href="/resume.pdf" target="_blank" rel="noreferrer">
+            Resume
+          </a>
         </nav>
       </header>
 
@@ -66,6 +69,14 @@ function App() {
             </a>
             <a className="btn ghost" href="#contact">
               Contact Me
+            </a>
+            <a
+              className="btn ghost"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Resume
             </a>
           </div>
         </section>
@@ -104,6 +115,11 @@ function App() {
             </li>
             <li>
               <a href="https://www.linkedin.com">LinkedIn</a>
+            </li>
+            <li>
+              <a href="/resume.pdf" target="_blank" rel="noreferrer">
+                Resume (PDF)
+              </a>
             </li>
           </ul>
         </section>
