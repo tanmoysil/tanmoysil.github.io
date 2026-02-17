@@ -169,9 +169,7 @@ function App() {
 
       <main id="home">
         <section className="hero reveal">
-          <p className="eyebrow">
-            Electrical Engineering • Computational Neuroscience
-          </p>
+          <p className="eyebrow">PhD Candidate (defense pending)</p>
           <h1>
             I study and build computational models of neural systems and their
             engineering applications.
@@ -211,9 +209,8 @@ function App() {
             I am currently a PhD candidate in Computational Neuroscience at the
             University of Wurzburg, where I study neural biomarkers in
             Parkinson&apos;s disease using LFP, EEG, EMG, and accelerometer data.
-            My research includes wavelet-based beta-burst detection, latent
-            representation learning with VAEs, and translation from animal
-            models to human Deep Brain Stimulation studies.
+            I also work on computer vision methods for clinically interpretable
+            movement analysis.
           </p>
           <p>
             My background includes an MS in Biomedical Engineering from the
