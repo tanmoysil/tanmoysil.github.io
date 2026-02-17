@@ -97,8 +97,15 @@ function App() {
     applyTheme(nextTheme);
   };
 
+  const trackEvent = (name, props = {}) => {
+    if (typeof window !== "undefined" && typeof window.plausible === "function") {
+      window.plausible(name, { props });
+    }
+  };
+
   const handleContactSubmit = async (event) => {
     event.preventDefault();
+    trackEvent("Contact Form Submit Attempt");
     setFormState({ status: "submitting", message: "Sending your message..." });
 
     const form = event.currentTarget;
@@ -113,6 +120,7 @@ function App() {
 
       if (response.ok) {
         form.reset();
+        trackEvent("Contact Form Submit Success");
         setFormState({
           status: "success",
           message:
@@ -126,12 +134,14 @@ function App() {
         message:
           "Message could not be sent right now. Please try again, or email me directly.",
       });
+      trackEvent("Contact Form Submit Error");
     } catch (error) {
       setFormState({
         status: "error",
         message:
           "Network error while sending. Please retry or contact me via email.",
       });
+      trackEvent("Contact Form Submit Error");
     }
   };
 
@@ -151,7 +161,12 @@ function App() {
           <a href="#now">Now</a>
           <a href="#publications">Publications</a>
           <a href="#contact">Contact</a>
-          <a href="/resume.pdf" target="_blank" rel="noreferrer">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => trackEvent("Resume Click", { location: "nav" })}
+          >
             Resume
           </a>
           <button
@@ -190,6 +205,7 @@ function App() {
               href="/resume.pdf"
               target="_blank"
               rel="noreferrer"
+              onClick={() => trackEvent("Resume Click", { location: "hero" })}
             >
               View Resume
             </a>
@@ -226,7 +242,12 @@ function App() {
           </p>
           <p>
             CV:{" "}
-            <a href="/resume.pdf" target="_blank" rel="noreferrer">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackEvent("Resume Click", { location: "about" })}
+            >
               Open Resume (PDF)
             </a>
           </p>
@@ -353,6 +374,10 @@ function App() {
             </p>
           </form>
 
+          <p>
+            Open to collaborations in computational neuroscience, neural signal
+            processing, and clinically grounded computer vision.
+          </p>
           <p>Or reach out here:</p>
           <ul className="contact-list">
             <li>
@@ -367,7 +392,12 @@ function App() {
               <a href="https://www.linkedin.com">LinkedIn</a>
             </li>
             <li>
-              <a href="/resume.pdf" target="_blank" rel="noreferrer">
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => trackEvent("Resume Click", { location: "contact" })}
+              >
                 Resume (PDF)
               </a>
             </li>
