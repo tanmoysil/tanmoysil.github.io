@@ -25,8 +25,9 @@ const projects = [
 const publications = [
   {
     citation:
-      "Sil, T., et al. (2025). Sensor-based data driven differentiation between Parkinson’s disease and essential tremor. Expert Systems with Applications (In Revision).",
+      "Sil, T., et al. (2025). Sensor-based data driven differentiation between Parkinson’s disease and essential tremor. Expert Systems with Applications.",
     doi: "",
+    url: "https://www.sciencedirect.com/science/article/pii/S095741742503951X",
   },
   {
     citation:
@@ -287,6 +288,10 @@ function App() {
                     rel="noreferrer"
                   >
                     DOI: {publication.doi}
+                  </a>
+                ) : publication.url ? (
+                  <a href={publication.url} target="_blank" rel="noreferrer">
+                    Published Article
                   </a>
                 ) : (
                   <span className="pub-note">DOI pending</span>
