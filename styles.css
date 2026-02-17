@@ -1,0 +1,264 @@
+:root {
+  --bg: #f5efe6;
+  --ink: #191411;
+  --muted: #5d5045;
+  --panel: rgba(255, 255, 255, 0.72);
+  --line: rgba(25, 20, 17, 0.12);
+  --accent: #e85d2a;
+  --accent-2: #0f7b6c;
+  --shadow: 0 20px 50px rgba(25, 20, 17, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 0% 0%, #f7c977 0%, transparent 30%),
+    radial-gradient(circle at 95% 15%, #8edec8 0%, transparent 32%),
+    linear-gradient(140deg, #f3ece2 0%, #efe4d8 50%, #efe7df 100%);
+  min-height: 100vh;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: repeating-radial-gradient(#000 0 1px, transparent 1px 2px);
+  background-size: 4px 4px;
+}
+
+.topbar,
+main,
+footer {
+  width: min(980px, 92vw);
+  margin: 0 auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 14px;
+  z-index: 2;
+  margin-top: 14px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--ink);
+}
+
+main {
+  padding: 36px 0 60px;
+}
+
+.hero {
+  padding: 58px 28px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-2);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Syne", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 4.1rem);
+  line-height: 1.02;
+  max-width: 900px;
+}
+
+.subtitle {
+  color: var(--muted);
+  max-width: 600px;
+  margin-top: 14px;
+  font-size: 1.06rem;
+}
+
+.cta-row {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+}
+
+.btn.ghost {
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.panel {
+  margin-top: 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--panel);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  font-size: 1.7rem;
+}
+
+.panel p {
+  color: var(--muted);
+  max-width: 720px;
+}
+
+.grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  background: #fffcf8;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.card p {
+  margin-top: 0;
+}
+
+.card a {
+  color: var(--accent-2);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.contact-list a {
+  color: var(--ink);
+}
+
+footer {
+  padding-bottom: 30px;
+}
+
+footer p {
+  color: var(--muted);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    top: 8px;
+    margin-top: 8px;
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+
+  nav {
+    gap: 10px;
+    font-size: 0.93rem;
+  }
+
+  .hero {
+    padding: 36px 6px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
