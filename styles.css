@@ -42,6 +42,8 @@ body {
     40px 40px,
     100% 100%;
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
 [data-theme="dark"] body {
@@ -53,6 +55,31 @@ body {
     40px 40px,
     40px 40px,
     100% 100%;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 18px,
+      rgba(13, 111, 158, 0.16) 18px 20px,
+      transparent 20px 44px
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(45, 157, 127, 0.08) 40%,
+      transparent 100%
+    );
+}
+
+[data-theme="dark"] body::before {
+  opacity: 0.22;
 }
 
 .noise {
@@ -155,6 +182,23 @@ main {
 
 .hero {
   padding: 58px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  height: 68px;
+  pointer-events: none;
+  opacity: 0.45;
+  color: var(--accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0 70 L55 70 L72 45 L88 95 L110 30 L138 87 L170 67 L220 67 L255 48 L286 90 L310 38 L336 80 L366 65 L430 65 L465 35 L495 95 L520 45 L550 84 L580 62 L640 62 L672 42 L700 98 L728 44 L756 83 L790 60 L846 60 L878 40 L910 94 L940 44 L970 79 L1002 58 L1058 58 L1092 38 L1122 92 L1150 46 L1180 72 L1200 72' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .eyebrow {
@@ -224,6 +268,25 @@ h1 {
   background: var(--paper);
   padding: 24px;
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent) 20%,
+    var(--accent-2) 55%,
+    transparent 100%
+  );
+  opacity: 0.55;
 }
 
 .panel h2 {
@@ -431,6 +494,14 @@ textarea:focus-visible {
 
   .hero {
     padding: 36px 6px;
+  }
+
+  .hero::after {
+    left: 8px;
+    right: 8px;
+    bottom: 10px;
+    height: 52px;
+    opacity: 0.38;
   }
 
   .panel {
