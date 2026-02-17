@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Tanmoy Sil Portfolio</title>
+  <desc id="desc">Portfolio preview card for Tanmoy Sil.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3ece2" />
+      <stop offset="100%" stop-color="#efe4d8" />
+    </linearGradient>
+    <radialGradient id="shape1" cx="0.2" cy="0.2" r="0.35">
+      <stop offset="0%" stop-color="#f7c977" stop-opacity="1" />
+      <stop offset="100%" stop-color="#f7c977" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="shape2" cx="0.85" cy="0.25" r="0.32">
+      <stop offset="0%" stop-color="#8edec8" stop-opacity="1" />
+      <stop offset="100%" stop-color="#8edec8" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#shape1)" />
+  <rect width="1200" height="630" fill="url(#shape2)" />
+
+  <g fill="#191411">
+    <text x="90" y="250" font-family="Arial, sans-serif" font-size="70" font-weight="700">
+      Tanmoy Sil
+    </text>
+    <text x="90" y="330" font-family="Arial, sans-serif" font-size="42" font-weight="600">
+      Portfolio
+    </text>
+    <text x="90" y="410" font-family="Arial, sans-serif" font-size="30" fill="#5d5045">
+      Projects • Resume • Contact
+    </text>
+    <text x="90" y="520" font-family="Arial, sans-serif" font-size="24" fill="#0f7b6c">
+      tanmoysil.github.io
+    </text>
+  </g>
+</svg>

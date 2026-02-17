@@ -115,7 +115,34 @@ function App() {
 
         <section id="contact" className="panel reveal">
           <h2>Contact</h2>
-          <p>Want to collaborate? Reach out:</p>
+          <p>Send me a message directly from this page:</p>
+          <form
+            className="contact-form"
+            action="https://formsubmit.co/tanmoy_sil@hotmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New message from portfolio" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://tanmoysil.github.io/#contact"
+            />
+            <label htmlFor="name">Name</label>
+            <input id="name" name="name" type="text" required />
+
+            <label htmlFor="email">Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label htmlFor="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button className="btn primary" type="submit">
+              Send Message
+            </button>
+          </form>
+
+          <p>Or reach out here:</p>
           <ul className="contact-list">
             <li>
               <a href="mailto:tanmoy_sil@hotmail.com">

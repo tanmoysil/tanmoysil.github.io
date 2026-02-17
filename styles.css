@@ -210,6 +210,47 @@ h1 {
   color: var(--ink);
 }
 
+.contact-form {
+  margin-top: 12px;
+  max-width: 620px;
+  display: grid;
+  gap: 8px;
+}
+
+.contact-form label {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  font: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(15, 123, 108, 0.3);
+  outline-offset: 1px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  margin-top: 4px;
+  justify-self: start;
+  cursor: pointer;
+}
+
 footer {
   padding-bottom: 30px;
 }
