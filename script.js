@@ -22,9 +22,41 @@ const projects = [
   },
 ];
 
+const publications = [
+  {
+    citation:
+      "Sil, T., et al. (2025). Sensor-based data driven differentiation between Parkinson’s disease and essential tremor. Expert Systems with Applications (In Revision).",
+    doi: "",
+  },
+  {
+    citation:
+      "Hofman, K., Chen, J.Z., Sil, T., et al. (2025). Low beta predicts motor output and cell degeneration in the A53T Parkinson’s disease rat model. Brain, 148(5), 1572-1585.",
+    doi: "10.1093/brain/awaf063",
+  },
+  {
+    citation:
+      "Sil, T., et al. (2023). Wavelet-based bracketing, time-frequency beta-burst detection: new insights in Parkinson’s disease. Neurotherapeutics, 20, 1767-1778.",
+    doi: "10.1007/s13311-023-01447-4",
+  },
+  {
+    citation:
+      "Khan, S., Paul, A., Sil, T., et al. (2016). Position control of a DC motor system for tracking periodic reference inputs in a data driven paradigm. ICICPI, 17-21.",
+    doi: "10.1109/ICICPI.2016.7859665",
+  },
+  {
+    citation:
+      "Bhattacharya, S., Khan, S., Sil, T., et al. (2015). IPMC based data glove for finger motion capturing. Advances in Robotics, 1-6.",
+    doi: "10.1145/2783449.2783500",
+  },
+];
+
 function App() {
   const year = new Date().getFullYear();
   const [theme, setTheme] = React.useState("light");
+  const [formState, setFormState] = React.useState({
+    status: "idle",
+    message: "",
+  });
 
   const applyTheme = React.useCallback((nextTheme) => {
     document.documentElement.setAttribute("data-theme", nextTheme);
@@ -62,6 +94,44 @@ function App() {
     setTheme(nextTheme);
     localStorage.setItem("theme", nextTheme);
     applyTheme(nextTheme);
+  };
+
+  const handleContactSubmit = async (event) => {
+    event.preventDefault();
+    setFormState({ status: "submitting", message: "Sending your message..." });
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        form.reset();
+        setFormState({
+          status: "success",
+          message:
+            "Message sent successfully. I will get back to you as soon as possible.",
+        });
+        return;
+      }
+
+      setFormState({
+        status: "error",
+        message:
+          "Message could not be sent right now. Please try again, or email me directly.",
+      });
+    } catch (error) {
+      setFormState({
+        status: "error",
+        message:
+          "Network error while sending. Please retry or contact me via email.",
+      });
+    }
   };
 
   return (
@@ -168,13 +238,15 @@ function App() {
           <h2>Now</h2>
           <ul className="now-list">
             <li>
-              Building simulation and inference workflows for neural dynamics.
+              Modeling dystonia kinematics for clinically interpretable visual
+              biomarkers.
             </li>
             <li>
-              Studying biologically plausible learning and control strategies.
+              Disentangling DBS artifacts from physiological signals in STN-LFP
+              data.
             </li>
             <li>
-              Writing clear technical notes on neuroscience methods and results.
+              Linking latent neural features to therapeutic response metrics.
             </li>
           </ul>
         </section>
@@ -195,9 +267,33 @@ function App() {
         <section id="publications" className="panel reveal">
           <h2>Publications</h2>
           <p>
-            Add your papers, preprints, and conference posters here. Example:
-            Author(s), title, venue/year, and a DOI or arXiv link.
+            Google Scholar:{" "}
+            <a
+              href="https://scholar.google.com/citations?user=f4tD5QYAAAAJ&hl=en"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View profile
+            </a>
           </p>
+          <ol className="pub-list">
+            {publications.map((publication) => (
+              <li key={publication.citation}>
+                <span>{publication.citation}</span>
+                {publication.doi ? (
+                  <a
+                    href={`https://doi.org/${publication.doi}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    DOI: {publication.doi}
+                  </a>
+                ) : (
+                  <span className="pub-note">DOI pending</span>
+                )}
+              </li>
+            ))}
+          </ol>
         </section>
 
         <section id="contact" className="panel reveal">
@@ -208,6 +304,8 @@ function App() {
             action="https://formsubmit.co/tanmoy_sil@hotmail.com"
             method="POST"
             aria-label="Contact form"
+            onSubmit={handleContactSubmit}
+            noValidate
           >
             <input type="hidden" name="_subject" value="New message from portfolio" />
             <input type="hidden" name="_captcha" value="false" />
@@ -237,9 +335,20 @@ function App() {
             <label htmlFor="message">Message</label>
             <textarea id="message" name="message" rows="5" required></textarea>
 
-            <button className="btn primary" type="submit">
-              Send Message
+            <button
+              className="btn primary"
+              type="submit"
+              disabled={formState.status === "submitting"}
+            >
+              {formState.status === "submitting" ? "Sending..." : "Send Message"}
             </button>
+            <p
+              className={`form-status ${formState.status}`}
+              role={formState.status === "error" ? "alert" : "status"}
+              aria-live="polite"
+            >
+              {formState.message}
+            </p>
           </form>
 
           <p>Or reach out here:</p>
