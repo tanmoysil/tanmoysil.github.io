@@ -108,7 +108,9 @@ function App() {
           <p>Want to collaborate? Reach out:</p>
           <ul className="contact-list">
             <li>
-              <a href="mailto:hello@example.com">hello@example.com</a>
+              <a href="mailto:tanmoy_sil@hotmail.com">
+                tanmoy_sil@hotmail.com
+              </a>
             </li>
             <li>
               <a href="https://github.com/tanmoysil">github.com/tanmoysil</a>
