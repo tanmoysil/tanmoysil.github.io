@@ -88,6 +88,16 @@ function App() {
             maintainable code. I focus on shipping quickly without compromising
             quality.
           </p>
+          <p>
+            Email:{" "}
+            <a href="mailto:tanmoy_sil@hotmail.com">tanmoy_sil@hotmail.com</a>
+          </p>
+          <p>
+            CV:{" "}
+            <a href="/resume.pdf" target="_blank" rel="noreferrer">
+              Open Resume (PDF)
+            </a>
+          </p>
         </section>
 
         <section id="projects" className="panel reveal">
