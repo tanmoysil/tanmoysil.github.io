@@ -193,6 +193,32 @@ function App() {
             Bridging signal processing, dynamical systems, and machine learning
             to understand brain computation.
           </p>
+          <figure className="hero-media">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/4/41/EEG_Recording_Cap.jpg"
+              alt="EEG recording cap with electrodes"
+              loading="lazy"
+            />
+            <figcaption>
+              EEG image by Chris Hope (
+              <a
+                href="https://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                CC BY 2.0
+              </a>
+              ) via{" "}
+              <a
+                href="https://commons.wikimedia.org/wiki/File:EEG_Recording_Cap.jpg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Wikimedia Commons
+              </a>
+              .
+            </figcaption>
+          </figure>
           <div className="cta-row">
             <a className="btn primary" href="#research">
               View Research
