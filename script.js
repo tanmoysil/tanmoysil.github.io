@@ -54,6 +54,7 @@ const publications = [
 function App() {
   const year = new Date().getFullYear();
   const [theme, setTheme] = React.useState("light");
+  const [isReady, setIsReady] = React.useState(false);
   const [formState, setFormState] = React.useState({
     status: "idle",
     message: "",
@@ -88,6 +89,11 @@ function App() {
     const targets = document.querySelectorAll(".reveal");
     targets.forEach((target) => observer.observe(target));
     return () => observer.disconnect();
+  }, []);
+
+  React.useEffect(() => {
+    const timer = window.setTimeout(() => setIsReady(true), 40);
+    return () => window.clearTimeout(timer);
   }, []);
 
   const toggleTheme = () => {
