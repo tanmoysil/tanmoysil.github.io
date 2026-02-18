@@ -184,7 +184,9 @@ function App() {
 
       <main id="home">
         <section className="hero reveal">
-          <p className="eyebrow">PhD Candidate (defense pending)</p>
+          <p className="eyebrow">
+            Neuroengineering • Computational Neuroscience
+          </p>
           <h1>
             I study and build computational models of neural systems and their
             engineering applications.
