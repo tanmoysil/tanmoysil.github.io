@@ -231,25 +231,6 @@ h1 {
   font-size: 1.06rem;
 }
 
-.hero-media {
-  margin: 18px 0 0;
-  max-width: 720px;
-}
-
-.hero-media img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-}
-
-.hero-media figcaption {
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 0.86rem;
-}
 
 .cta-row {
   margin-top: 24px;
@@ -544,10 +525,6 @@ textarea:focus-visible {
     bottom: 10px;
     height: 52px;
     opacity: 0.38;
-  }
-
-  .hero-media {
-    margin-top: 14px;
   }
 
   .interest-strip {
