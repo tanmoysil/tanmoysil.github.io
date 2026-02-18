@@ -241,24 +241,11 @@ h1 {
 
 .interest-strip {
   margin-top: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.interest-strip span {
-  border: 1px solid var(--line);
-  background: rgba(13, 111, 158, 0.08);
-  color: var(--ink);
-  border-radius: 999px;
-  padding: 6px 12px;
-  font-size: 0.85rem;
+  color: var(--muted);
+  font-size: 0.92rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
-}
-
-[data-theme="dark"] .interest-strip span {
-  background: rgba(103, 191, 232, 0.14);
+  line-height: 1.5;
+  max-width: 860px;
 }
 
 .btn {

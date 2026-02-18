@@ -213,11 +213,8 @@ function App() {
             </a>
           </div>
           <div className="interest-strip" aria-label="Research interests">
-            <span>STN-LFP Biomarkers</span>
-            <span>DBS Signal Decoding</span>
-            <span>Dystonia Kinematics</span>
-            <span>Computational Neuroscience</span>
-            <span>Clinical Computer Vision</span>
+            Biomarkers · DBS · Kinematics · Computational Neuroscience ·
+            Computer Vision · Signal Processing
           </div>
         </section>
 
