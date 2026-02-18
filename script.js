@@ -302,6 +302,7 @@ function App() {
           </ul>
         </section>
 
+        {/*
         <section id="research" className="panel reveal">
           <h2>Research &amp; Projects</h2>
           <div className="grid">
@@ -314,6 +315,7 @@ function App() {
             ))}
           </div>
         </section>
+        */}
 
         <section id="publications" className="panel reveal">
           <h2>Publications</h2>
