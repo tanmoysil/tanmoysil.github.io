@@ -195,6 +195,32 @@ function App() {
             Combining signal processing, machine learning, and computer vision
             to decode clinically relevant brain and movement biomarkers.
           </p>
+          <figure className="hero-media">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Human_EEG_artefacts.png"
+              alt="Example human EEG artefacts"
+              loading="lazy"
+            />
+            <figcaption>
+              By Andrii Cherninskyi (
+              <a
+                href="https://creativecommons.org/licenses/by-sa/4.0/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                CC BY-SA 4.0
+              </a>
+              ), via{" "}
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Human_EEG_artefacts.png"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Wikimedia Commons
+              </a>
+              .
+            </figcaption>
+          </figure>
           <div className="cta-row">
             <a className="btn primary" href="#research">
               View Research

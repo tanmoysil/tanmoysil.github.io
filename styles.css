@@ -231,6 +231,26 @@ h1 {
   font-size: 1.06rem;
 }
 
+.hero-media {
+  margin: 16px 0 0;
+  max-width: 700px;
+}
+
+.hero-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.hero-media figcaption {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 
 .cta-row {
   margin-top: 24px;
@@ -516,6 +536,10 @@ textarea:focus-visible {
 
   .interest-strip {
     margin-top: 14px;
+  }
+
+  .hero-media {
+    margin-top: 12px;
   }
 
   .panel {
