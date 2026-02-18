@@ -192,8 +192,8 @@ function App() {
             engineering applications.
           </h1>
           <p className="subtitle">
-            Bridging signal processing, dynamical systems, and machine learning
-            to understand brain computation.
+            Combining signal processing, machine learning, and computer vision
+            to decode clinically relevant brain and movement biomarkers.
           </p>
           <div className="cta-row">
             <a className="btn primary" href="#research">
