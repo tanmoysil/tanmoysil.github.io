@@ -152,18 +152,37 @@ function App() {
   };
 
   return (
-    <>
+    <div className={`page-shell ${isReady ? "is-ready" : ""}`}>
       <a className="skip-link" href="#home">
         Skip to content
       </a>
       <div className="noise"></div>
       <header className="topbar">
-        <a className="brand" href="#home">
-          tanmoysil
-        </a>
+        <div className="brand-wrap">
+          <a className="brand" href="#home">
+            tanmoysil
+          </a>
+          <div className="profile-links" aria-label="Profile links">
+            <a
+              href="https://scholar.google.com/citations?user=f4tD5QYAAAAJ&hl=en"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Google Scholar"
+            >
+              GS
+            </a>
+            <a
+              href="https://linkedin.com/in/tanmoysil"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              in
+            </a>
+          </div>
+        </div>
         <nav aria-label="Main navigation">
           <a href="#about">About</a>
-          <a href="#research">Research</a>
           <a href="#now">Now</a>
           <a href="#publications">Publications</a>
           <a href="#contact">Contact</a>
@@ -228,8 +247,8 @@ function App() {
             </figcaption>
           </figure>
           <div className="cta-row">
-            <a className="btn primary" href="#research">
-              View Research
+            <a className="btn primary" href="#publications">
+              View Publications
             </a>
             <a className="btn ghost" href="#contact">
               Contact Me
@@ -448,7 +467,7 @@ function App() {
       <footer>
         <p>© {year} Tanmoy Sil</p>
       </footer>
-    </>
+    </div>
   );
 }
 
