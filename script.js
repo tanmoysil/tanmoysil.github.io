@@ -279,8 +279,8 @@ function App() {
             treatment.
           </p>
           <p>
-            I am currently a PhD candidate in Computational Neuroscience at the
-            University of Wurzburg, where I study neural biomarkers in
+            I hold a PhD in Computational Neuroscience from the University of
+            Wurzburg, where I studied neural biomarkers in
             Parkinson&apos;s disease using LFP, EEG, EMG, and accelerometer data.
             I also work on computer vision methods for clinically interpretable
             movement analysis.
